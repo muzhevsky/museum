@@ -236,8 +236,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0771942dee22e7c4d899e0fd5273ae42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  questionController: {fileID: 0}
-  answersListController: {fileID: 0}
+  questionController: {fileID: 1272807349}
+  answersListController: {fileID: 220987535}
 --- !u!114 &210370966
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1092,6 +1092,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   questionImage: {fileID: 0}
   questionText: {fileID: 0}
+  questionList: {fileID: 0}
 --- !u!1 &1368838552
 GameObject:
   m_ObjectHideFlags: 0
