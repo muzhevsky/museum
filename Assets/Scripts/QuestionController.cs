@@ -1,27 +1,29 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class QuestionController : MonoBehaviour
 {
-    [SerializeField] Image questionImage;
-    [SerializeField] Text questionText;
-    [SerializeField] QuestionList questionList;
 
-    private void Start()
+    [SerializeField] GameObject textQuestionPrefab;
+    [SerializeField] GameObject imageQuestionPrefab;
+    public void AddTextQuestion(string text)
     {
-        IQuestion question = questionList.GetNewQuestion();
-        switch (question.GetQuestionType())
-        {
-            case "text":
-                questionImage.gameObject.SetActive(false);
-                questionText.text = question.GetText();
-                break;
-            case "image":
-                questionImage.gameObject.SetActive(true);
-                questionText.text = question.GetText();
-                break;
-        }
+        GameObject newItem = Instantiate(textQuestionPrefab, transform);
+        newItem.GetComponent<Text>().text = text;
+    }
+
+    public void AddImageQuestion(string text, Sprite sprite)
+    {
+        GameObject newItem = Instantiate(imageQuestionPrefab, transform);
+        newItem.GetComponent<Text>().text = text;
+        newItem.GetComponent<Image>().sprite = sprite;
+    }
+
+    public void SetQuestionUI(Question question)
+    {
+        question.AcceptVisitor(this);
     }
 }

@@ -1,20 +1,14 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "ScriptableObject/ImageQuestion")]
-public class ImageQuestion : ScriptableObject, IQuestion
+public class ImageQuestion : Question
 {
-    [SerializeField] string text = "";
-    [SerializeField] Image image;
-    const string type = "image";
-    public string GetText()
+    [SerializeField] string text;
+    [SerializeField] Sprite sprite;
+
+     public override void AcceptVisitor(QuestionController visitor)
     {
-        return text;
-    }
-    public string GetQuestionType()
-    {
-        return type;
+        visitor.AddImageQuestion(text, sprite);
     }
 }

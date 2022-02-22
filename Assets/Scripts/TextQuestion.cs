@@ -1,19 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
+﻿using UnityEngine;
 
 [CreateAssetMenu(menuName = "ScriptableObject/TextQuestion")]
-public class TextQuestion : ScriptableObject,IQuestion
+public class TextQuestion : Question
 {
-    [SerializeField] string text = "";
-    public const string type = "text";
-    public string GetText()
+    [SerializeField] string text;
+    public override void AcceptVisitor(QuestionController visitor)
     {
-        return text;
-    }
-    public string GetQuestionType()
-    {
-        return type;
+        visitor.AddTextQuestion(text);
     }
 }
