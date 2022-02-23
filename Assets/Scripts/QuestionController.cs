@@ -12,18 +12,17 @@ public class QuestionController : MonoBehaviour
     public void AddTextQuestion(string text)
     {
         GameObject newItem = Instantiate(textQuestionPrefab, transform);
-        newItem.GetComponent<Text>().text = text;
+        newItem.GetComponent<TextQuestionController>().SetContent(text);
     }
 
     public void AddImageQuestion(string text, Sprite sprite)
     {
         GameObject newItem = Instantiate(imageQuestionPrefab, transform);
-        newItem.GetComponent<Text>().text = text;
-        newItem.GetComponent<Image>().sprite = sprite;
+        newItem.GetComponent<ImageQuestionController>().SetContent(text, sprite);
     }
 
     public void SetQuestionUI(Question question)
     {
-        question.AcceptVisitor(this);
+        question.SendContent(this);
     }
 }

@@ -7,7 +7,7 @@ public class ImageQuestion : Question
     [SerializeField] string text;
     [SerializeField] Sprite sprite;
 
-     public override void AcceptVisitor(QuestionController visitor)
+     public override void SendContent(QuestionController visitor)
     {
         visitor.AddImageQuestion(text, sprite);
     }

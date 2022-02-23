@@ -4,7 +4,7 @@
 public class TextQuestion : Question
 {
     [SerializeField] string text;
-    public override void AcceptVisitor(QuestionController visitor)
+    public override void SendContent(QuestionController visitor)
     {
         visitor.AddTextQuestion(text);
     }

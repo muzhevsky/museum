@@ -88,11 +88,11 @@ GameObject:
   m_Component:
   - component: {fileID: 4354298181317670283}
   - component: {fileID: 4354298181317670277}
-  - component: {fileID: -1528784169427604190}
   - component: {fileID: 4354298181317670276}
   - component: {fileID: 6200646329304993118}
+  - component: {fileID: 2229022497623636623}
   m_Layer: 0
-  m_Name: TextAnswer
+  m_Name: TextQuestion
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -126,19 +126,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4354298181317670282}
   m_CullTransparentMesh: 0
---- !u!114 &-1528784169427604190
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4354298181317670282}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d9ee6c090ea21a24da5c4b15035036a5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 4354298180469399428}
 --- !u!114 &4354298181317670276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -188,3 +175,16 @@ MonoBehaviour:
   m_FlexibleWidth: -1
   m_FlexibleHeight: -1
   m_LayoutPriority: 1
+--- !u!114 &2229022497623636623
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4354298181317670282}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 27ae5f5216ef86549874259b58d72e1b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 4354298180469399428}
