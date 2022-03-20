@@ -1,4 +1,5 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,28 +7,31 @@ public class QuizController : MonoBehaviour
 {
     [SerializeField] QuestionController questionController;
     [SerializeField] AnswerListController answerListController;
-    [SerializeField] List<QuizItem> list;
+    [SerializeField] List<QuizItem> quizItems;
+    [SerializeField] GameBlock gameBlock;
     int number = 0;
-    public void ContinueQuiz()
+    public void StartQuiz()
     {
-        if (answerListController.CheckCorrectAnswers())
+        if (number<quizItems.Count)
         {
-            // сюда можно анимацию вставить
-            StartCoroutine(SetUI());
+            questionController.SetQuestionUI(quizItems[number].GetQuestion());
+            answerListController.SetAnswerUI(quizItems[number++].GetAnswerList());
+            answerListController.SetQuizController(this);
         }
+        else gameBlock.LoadNextLevel();
     }
-    public IEnumerator SetUI()
+    public void OnRightAnswer()
     {
-        yield return new WaitForSeconds(1);
-        if (number<list.Count)
-        {
-            questionController.SetQuestionUI(list[number].GetQuestion());
-            answerListController.SetAnswerUI(list[number++].GetAnswerList());
-        }
-        else EndQuiz();
+        gameBlock.OnRightAnswer();
     }
-    void EndQuiz()
+    public void OnFalseAnswer()
     {
+        gameBlock.OnFalseAnswer();
+    }
 
+    public void RestartQuiz()
+    {
+        number = 0;
+        StartQuiz();
     }
 }

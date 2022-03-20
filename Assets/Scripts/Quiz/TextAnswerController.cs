@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class TextAnswerController : AnswerController
+public class TextAnswerController : SingleAnswerController
 {
     [SerializeField] Text text;
     public void SetText(string text)

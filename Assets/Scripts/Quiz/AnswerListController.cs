@@ -1,10 +1,12 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using UnityEngine;
 public class AnswerListController : MonoBehaviour
 {
     public GameObject textAnswer;
     public GameObject imageAnswer;
-    List<AnswerController> answerList = new List<AnswerController>();
+    List<SingleAnswerController> answerList = new List<SingleAnswerController>();
+    QuizController quizController;
     GameObject newItem;
 
     public void AddTextAnswer(string text, Answer answer)
@@ -14,7 +16,14 @@ public class AnswerListController : MonoBehaviour
         answerList.Add(answerController);
         answerController.SetText(text);
         answerController.SetAnswer(answer);
+        answerController.SetList(this);
     }
+
+    internal void SetQuizController(QuizController quizController)
+    {
+        this.quizController = quizController;
+    }
+
     public void AddImageAnswer(Sprite image, Answer answer)
     {
         newItem = Instantiate(imageAnswer, transform);
@@ -22,12 +31,13 @@ public class AnswerListController : MonoBehaviour
         answerList.Add(answerController);
         answerController.SetImage(image);
         answerController.SetAnswer(answer);
+        answerController.SetList(this);
     }
     void ClearAnswersList()
     {
         if (answerList.Count > 0)
         {
-            foreach (AnswerController answer in answerList)
+            foreach (SingleAnswerController answer in answerList)
                 Destroy(answer.gameObject);
             answerList.Clear();
         }
@@ -37,23 +47,18 @@ public class AnswerListController : MonoBehaviour
         ClearAnswersList();
         answerList.SetAnswers(this);
     }
-
-    void ChangeStates()
+    public void OnAnswer(bool isRight)
     {
-        foreach(AnswerController item in answerList)
-        {
-            item.SetDefaultState();
-        }
+        if (isRight) quizController.OnRightAnswer();
+        else quizController.OnFalseAnswer();
     }
-
     public bool CheckCorrectAnswers()
     {
         bool res = true;
-        foreach (AnswerController item in answerList) { 
+        foreach (SingleAnswerController item in answerList) { 
             print(item.IsRight());
             if (!item.IsRight()) res = false;
-        }
-        if(!res) ChangeStates();
+        } 
         return res;
     }
 }
