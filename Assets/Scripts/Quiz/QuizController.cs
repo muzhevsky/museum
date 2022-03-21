@@ -9,7 +9,7 @@ public class QuizController : MonoBehaviour
     [SerializeField] AnswerListController answerListController;
     [SerializeField] List<QuizItem> quizItems;
     [SerializeField] GameBlock gameBlock;
-    int number = 0;
+    [SerializeField] int number = 0;
     public void StartQuiz()
     {
         if (number<quizItems.Count)
@@ -32,6 +32,5 @@ public class QuizController : MonoBehaviour
     public void RestartQuiz()
     {
         number = 0;
-        StartQuiz();
     }
 }

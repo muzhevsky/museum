@@ -19,60 +19,58 @@ public class GameBlock : Block
     [SerializeField] QuizController quizController;
     [SerializeField] GameBlock nextBlock;
     bool timerIsTicking = false;
+    private void Update()
+    {
+        if (timerIsTicking)
+        {
+            timeLeft -= Time.deltaTime;
+            onScreenTimer.text = Math.Round(timeLeft,2).ToString();
+        }
+        if (timeLeft < 0)
+        {
+            timeLeft = 0;
+            onScreenTimer.text = timeLeft.ToString();
+        }
+    }
     public void OnRightAnswer()
     {
         WinScreen.SetActive(true);
         activeScreen = WinScreen;
         timerIsTicking = false;
-        StopCoroutine(Timer());
     }
     public void OnFalseAnswer()
     {
         LoseScreen.SetActive(true);
+        activeScreen = LoseScreen;
+        quizContainer.SetActive(false);
+        timerIsTicking = false;
     }
     public void OnNextQuestion()
     {
         activeScreen.SetActive(false);
         timerIsTicking = true;
         timeLeft = timeLimit;
-        StartCoroutine(Timer());
         quizController.StartQuiz();
     }
     public void LoadNextLevel()
     {
+        StopGame();
         controller.LoadBlock(nextBlock);
     }
     public void RestartGame()
     {
         activeScreen.SetActive(false);
-        timerIsTicking = true;
-        timeLeft = timeLimit;
-        StartCoroutine(Timer());
-        quizController.RestartQuiz();
-    }
-    IEnumerator Timer()
-    {
-        onScreenTimer.text = Math.Round(timeLeft, 2).ToString();    
-        while (timerIsTicking)
-        {
-            yield return new WaitForSeconds(0.05f);
-            timeLeft-=0.05f;
-            if (timeLeft <= 0)
-            {
-                LoseScreen.SetActive(true);
-                activeScreen = LoseScreen;
-                break;
-            }
-            onScreenTimer.text = Math.Round(timeLeft, 2).ToString();
-        }
-        onScreenTimer.text = Math.Round(timeLeft,2).ToString();
+        quizContainer.SetActive(false);
+        activeScreen = StartScreen;
+        activeScreen.SetActive(true);
         timerIsTicking = false;
+        timeLeft = timeLimit;
+        quizController.RestartQuiz();
     }
     public void StartGame()
     {
         timerIsTicking = true;
         timeLeft = timeLimit;
-        StartCoroutine(Timer());
         activeScreen.SetActive(false);
         quizContainer.SetActive(true);
         quizController.StartQuiz();
@@ -80,14 +78,24 @@ public class GameBlock : Block
     public void PauseGame()
     {
         PauseScreen.SetActive(true);
+        quizContainer.SetActive(false);
         activeScreen = PauseScreen;
         timerIsTicking = false;
-        StopCoroutine(Timer());
     }
     public void UnpauseGame()
     {
+        quizContainer.SetActive(true);
         activeScreen.SetActive(false);
         timerIsTicking = true;
-        StartCoroutine(Timer());
     }
+    public void StopGame()
+    {
+        timerIsTicking=false;
+        timeLeft = timeLimit;
+        activeScreen.SetActive(false);
+        StartScreen.SetActive(true);
+        activeScreen = StartScreen;
+        quizController.RestartQuiz();
+    }
+
 }
