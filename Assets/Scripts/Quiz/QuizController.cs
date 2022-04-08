@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class QuizController : MonoBehaviour
 {
@@ -9,11 +10,18 @@ public class QuizController : MonoBehaviour
     [SerializeField] AnswerListController answerListController;
     [SerializeField] List<QuizItem> quizItems;
     [SerializeField] GameBlock gameBlock;
+    [SerializeField] Text questionNumberText;
     [SerializeField] int number = 0;
+    public bool QuizIsOver()
+    {
+        if (number < quizItems.Count) return false;
+        return true;
+    }
     public void StartQuiz()
     {
         if (number<quizItems.Count)
         {
+            questionNumberText.text = "[Вопрос "+quizItems[number].GetNumber()+"]";
             questionController.SetQuestionUI(quizItems[number].GetQuestion());
             answerListController.SetAnswerUI(quizItems[number++].GetAnswerList());
             answerListController.SetQuizController(this);
@@ -29,6 +37,10 @@ public class QuizController : MonoBehaviour
         gameBlock.OnFalseAnswer();
     }
 
+    public int GetNumber()
+    {
+        return number;
+    }
     public void RestartQuiz()
     {
         number = 0;

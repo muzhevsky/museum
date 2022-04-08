@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class Block : MonoBehaviour
 {
-    [SerializeField] GameObject gObject;
+    [SerializeField] protected GameObject gObject;
     public virtual void SetActive(bool flag)
     {
         gObject.SetActive(flag);
-        print(flag);
     }
 }

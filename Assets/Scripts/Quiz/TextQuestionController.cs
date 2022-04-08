@@ -9,6 +9,6 @@ public class TextQuestionController : MonoBehaviour
 
     public void SetContent(string text)
     {
-        this.text.text = text;
+        this.text.text = "["+text+"]";
     }
 }
