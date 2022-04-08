@@ -12,8 +12,6 @@ public class MyAnimation : MonoBehaviour
     [SerializeField] protected float length;
     private void Start()
     {
-        //scale = GetComponent<RectTransform>().localScale.x;
-        //print(scale);
         startPosition = ((RectTransform)transform).localPosition;
         startRotation = transform.rotation;
     }
@@ -36,7 +34,6 @@ public class MyAnimation : MonoBehaviour
     {
         animator.Play("win");
         float length = animator.runtimeAnimatorController.animationClips[1].length;
-        print(length);
         yield return new WaitForSeconds(length);
         animationController.OnWinAnimationEnd();
     }
@@ -44,7 +41,6 @@ public class MyAnimation : MonoBehaviour
     {
         ((RectTransform)transform).localPosition = startPosition;
         transform.rotation = startRotation;
-        //transform.localScale = new Vector3(scale,scale,scale);
         animator.Play("idle");
     }
     public virtual void Setup(int questionNumber)

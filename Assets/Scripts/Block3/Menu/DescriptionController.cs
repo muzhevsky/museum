@@ -1,12 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class DescriptionController : Button
 {
     [SerializeField] Image image;
-    [SerializeField] Text text;
+    [SerializeField] TextMeshProUGUI text;
     public override void OnClick()
     {
         gameObject.SetActive(false);

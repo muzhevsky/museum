@@ -30,7 +30,6 @@ public class CometAnimation : MyAnimation
     }
     public override void Setup(int questionNumber)
     {
-        print(questionNumber);
         animator.SetBool("WinRight",false);
         animator.SetBool("WinLeft", false);
         this.questionNumber = questionNumber;
