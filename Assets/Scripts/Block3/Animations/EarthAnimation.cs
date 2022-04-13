@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class EarthAnimation : MyAnimation
 {
+    [SerializeField] WinAnimationController controller;
     public override void Setup()
     {
         animator.Play("idle");
@@ -12,5 +13,6 @@ public class EarthAnimation : MyAnimation
     IEnumerator AnimateIdle()
     {
         yield return new WaitForSeconds(length);
+        controller.OnWinAnimationEnd();
     }
 }

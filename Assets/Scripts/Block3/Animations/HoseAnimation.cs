@@ -13,6 +13,7 @@ public class HoseAnimation : MyAnimation
     }
     public override void Setup()
     {
+        animator.Play("idle", -1, 0);
         animator.SetBool("lose", false);
         animator.SetBool("win", false);
     }

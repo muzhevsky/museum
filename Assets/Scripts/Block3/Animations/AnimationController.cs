@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
-    [SerializeField] List<MyAnimation> animators;
-    [SerializeField] GameBlock gameBlock;
-    [SerializeField] GameObject overlay;
+    [SerializeField] protected List<MyAnimation> animators;
+    [SerializeField] protected GameBlock gameBlock;
+    [SerializeField] protected GameObject overlay;
     public void OnVictory()
     {
         overlay.active = true;
@@ -51,7 +51,7 @@ public class AnimationController : MonoBehaviour
         overlay.active = false;
         gameBlock.Lose();
     }
-    public void OnWinAnimationEnd()
+    public virtual void OnWinAnimationEnd()
     {
         overlay.active = false;
         gameBlock.Win();

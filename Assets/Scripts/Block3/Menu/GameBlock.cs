@@ -33,14 +33,17 @@ public class GameBlock : Block
     {
         activeScreen.SetActive(false);
         onScreenTimer.StartTimer();
-        
+
         if (!quizController.QuizIsOver())
         {
             quizController.gameObject.SetActive(true);
             quizController.StartQuiz();
             animationController.OnSetup(quizController.GetNumber());
         }
-        else LoadNextLevel();
+        else
+        {
+            LoadNextLevel();
+        }
     }
     public void Win()
     {
@@ -59,14 +62,17 @@ public class GameBlock : Block
     }
     public void RestartGame()
     {
-        activeScreen.SetActive(false);
-        quizContainer.SetActive(false);
-        quizController.gameObject.SetActive(false);
-        activeScreen = StartScreen;
-        activeScreen.SetActive(true);
+        //activeScreen.SetActive(false);
+        //quizContainer.SetActive(false);
+        //quizController.gameObject.SetActive(false);
+        //activeScreen = StartScreen;
+        //activeScreen.SetActive(true);
+        //onScreenTimer.ResetTimer();
+        //quizController.RestartQuiz();
+        //animationController.OnSetup(quizController.GetNumber());
         onScreenTimer.ResetTimer();
         quizController.RestartQuiz();
-        animationController.OnSetup(quizController.GetNumber());
+        StartGame();
     }
     public void StartGame()
     {
@@ -100,7 +106,7 @@ public class GameBlock : Block
         activeScreen = StartScreen;
         quizContainer.SetActive(false);
         quizController.gameObject.SetActive(false);
-        quizController.RestartQuiz();
+        quizController.OnWin();
         animationController.OnSetup(quizController.GetNumber());
     }
     void EndGame()

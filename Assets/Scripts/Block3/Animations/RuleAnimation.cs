@@ -7,8 +7,7 @@ public class RuleAnimation : MyAnimation
     float questionNumber;
     public override void Lose()
     {
-        //StartCoroutine(AnimateLose());
-        animationController.OnLoseAnimationEnd();
+
     }
     public override void Win()
     {

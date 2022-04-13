@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Timer : MonoBehaviour
 {
     [SerializeField] float timeLimit = 20;
-    [SerializeField] float timeLeft = 20;
+    [SerializeField] public float timeLeft = 20;
     [SerializeField] GameBlock block;
     Text text;
     bool timerIsTicking = false;
@@ -23,7 +23,6 @@ public class Timer : MonoBehaviour
             text.text = Math.Round(timeLeft, 1).ToString();
             if (timeLeft <= 0)
             {
-                print("asasas");
                 block.OnFalseAnswer();
                 timeLeft = 0;
                 text.text = timeLeft.ToString();

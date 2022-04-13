@@ -43,6 +43,10 @@ public class QuizController : MonoBehaviour
     }
     public void RestartQuiz()
     {
+        number--;
+    }
+    public void OnWin()
+    {
         number = 0;
     }
 }

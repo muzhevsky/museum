@@ -18,6 +18,6 @@ public class DoorAnimation : MyAnimation
     }
     public override void Setup()
     {
-        loseBg.Play("idle");
+        loseBg.Play("idle", -1, 0);
     }
 }
