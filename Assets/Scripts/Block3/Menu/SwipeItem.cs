@@ -17,6 +17,6 @@ public class SwipeItem : Button
     public void OnClick()
     {
         descriptionController.gameObject.SetActive(true);
-        descriptionController.SetContent(content);
+        descriptionController.SetContent(content,(RectTransform)transform);
     }
 }

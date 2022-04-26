@@ -9,7 +9,7 @@ public class MenuButtonControllerSpecial : MenuButtonController
     public override void OnClick()
     {
         DescriptionGO.SetActive(false);
-        scrollReseter.Reset();
+        scrollReseter.OnReset();
         uiController.LoadBlock(nextBlock);
     }
 }

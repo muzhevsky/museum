@@ -7,7 +7,7 @@ public class PlayButton : MenuButtonController
     [SerializeField] ScrollReseter scrollReseter;
     public override void OnClick()
     {
-        scrollReseter.Reset();
+        scrollReseter.ResetDescription();
         uiController.LoadBlock(nextBlock);
     }
 }

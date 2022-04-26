@@ -19,7 +19,7 @@ public class ScrollReseter : MonoBehaviour
         scrollBarSlider.value = 0;
         sliderDescription.offsetMin = new Vector2(0, sliderDescription.offsetMin.y);
     }
-    public void Reset()
+    public void OnReset()
     {
         ResetSlider();
         ResetDescription();
