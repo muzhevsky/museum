@@ -1840,7 +1840,7 @@ Transform:
   m_GameObject: {fileID: 146058262}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -10}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 0.9648, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
@@ -12226,7 +12226,6 @@ GameObject:
   m_Component:
   - component: {fileID: 968193034}
   - component: {fileID: 968193039}
-  - component: {fileID: 968193038}
   - component: {fileID: 968193037}
   - component: {fileID: 968193036}
   - component: {fileID: 968193035}
@@ -12325,7 +12324,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DescriptionBlock: {fileID: 999641072}
-  ScrollReseter: {fileID: 0}
+  ScrollReseter: {fileID: 2095252633}
 --- !u!114 &968193037
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12360,20 +12359,6 @@ MonoBehaviour:
     m_VerticalOverflow: 0
     m_LineSpacing: 1
   m_Text: "[\u0417\u0430\u043A\u0440\u044B\u0442\u044C]"
---- !u!114 &968193038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 968193033}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f887745cd62d44c499eb0795a506589b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DescriptionBlock: {fileID: 1465928749}
-  ScrollReseter: {fileID: 2095252633}
 --- !u!222 &968193039
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17028,10 +17013,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
-  m_ReferenceResolution: {x: 800, y: 600}
+  m_ReferenceResolution: {x: 1920, y: 1080}
   m_ScreenMatchMode: 0
   m_MatchWidthOrHeight: 0
   m_PhysicalUnit: 3
@@ -22283,7 +22268,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1746802475}
   - component: {fileID: 1746802478}
-  - component: {fileID: 1746802476}
   - component: {fileID: 1746802477}
   - component: {fileID: 1746802479}
   - component: {fileID: 1746802480}
@@ -22313,20 +22297,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: -330}
   m_SizeDelta: {x: 359.3325, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1746802476
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1746802474}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f887745cd62d44c499eb0795a506589b, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  DescriptionBlock: {fileID: 443830455}
-  ScrollReseter: {fileID: 1970840658}
 --- !u!114 &1746802477
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -22382,7 +22352,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   DescriptionBlock: {fileID: 1565785816}
-  ScrollReseter: {fileID: 0}
+  ScrollReseter: {fileID: 1970840658}
 --- !u!114 &1746802480
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -27891,7 +27861,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -1165.195, y: -266.05798}
+  m_AnchoredPosition: {x: -1239, y: -274.05}
   m_SizeDelta: {x: 418.9236, y: 574.0346}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &3984056807362160466
