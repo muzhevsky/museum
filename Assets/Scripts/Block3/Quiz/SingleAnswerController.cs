@@ -9,6 +9,6 @@ public class SingleAnswerController : AnswerController
     [SerializeField] Image image;
     public override void OnClick()
     {
-        answerListController.OnAnswer(IsRight());
+        answerListController.OnAnswer(IsRight(),number);
     }
 }

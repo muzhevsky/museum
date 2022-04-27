@@ -37,7 +37,15 @@ public class QuizController : MonoBehaviour
         gameBlock.OnFalseAnswer();
     }
 
-    public int GetNumber()
+    public void OnRightAnswer(int answerNumber)
+    {
+        gameBlock.OnRightAnswer(answerNumber);
+    }
+    public void OnFalseAnswer(int answerNumber)
+    {
+        gameBlock.OnFalseAnswer(answerNumber);
+    }
+    public int GetQuestionNumber()
     {
         return number;
     }

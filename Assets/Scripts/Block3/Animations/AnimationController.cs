@@ -15,12 +15,28 @@ public class AnimationController : MonoBehaviour
             anim.Win();
         }
     }
-    public void OnDefeat()
+    public virtual void OnDefeat()
     {
         overlay.active = true;
         foreach (MyAnimation anim in animators)
         {
             anim.Lose();
+        }
+    }
+    public void OnVictory(int answerNumber)
+    {
+        overlay.active = true;
+        foreach (MyAnimation anim in animators)
+        {
+            anim.Win(answerNumber);
+        }
+    }
+    public virtual void OnDefeat(int answerNumber)
+    {
+        overlay.active = true;
+        foreach (MyAnimation anim in animators)
+        {
+            anim.Lose(answerNumber);
         }
     }
     public void OnSetup(int questionNumber)

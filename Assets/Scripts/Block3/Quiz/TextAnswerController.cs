@@ -9,6 +9,6 @@ public class TextAnswerController : SingleAnswerController
     [SerializeField] TextMeshProUGUI text;
     public void SetText(string text)
     {
-        this.text.SetText("[" + text + "]");
+        this.text.SetText(text);
     }
 }

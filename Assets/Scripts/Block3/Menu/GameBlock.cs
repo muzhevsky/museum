@@ -29,6 +29,18 @@ public class GameBlock : Block
         quizController.gameObject.SetActive(false);
         onScreenTimer.CountTime();
     }
+    public virtual void OnFalseAnswer(int answerNumber)
+    {
+        animationController.OnDefeat(answerNumber);
+        quizController.gameObject.SetActive(false);
+        onScreenTimer.CountTime();
+    }
+    public void OnRightAnswer(int answerNumber)
+    {
+        animationController.OnVictory(answerNumber);
+        quizController.gameObject.SetActive(false);
+        onScreenTimer.CountTime();
+    }
     public void OnNextQuestion()
     {
         activeScreen.SetActive(false);
@@ -38,7 +50,7 @@ public class GameBlock : Block
         {
             quizController.gameObject.SetActive(true);
             quizController.StartQuiz();
-            animationController.OnSetup(quizController.GetNumber());
+            animationController.OnSetup(quizController.GetQuestionNumber());
         }
         else
         {
@@ -81,7 +93,7 @@ public class GameBlock : Block
         quizContainer.SetActive(true);
         quizController.gameObject.SetActive(true);
         quizController.StartQuiz();
-        animationController.OnSetup(quizController.GetNumber());
+        animationController.OnSetup(quizController.GetQuestionNumber());
     }
     public void PauseGame()
     {
@@ -107,7 +119,7 @@ public class GameBlock : Block
         quizContainer.SetActive(false);
         quizController.gameObject.SetActive(false);
         quizController.OnWin();
-        animationController.OnSetup(quizController.GetNumber());
+        animationController.OnSetup(quizController.GetQuestionNumber());
     }
     void EndGame()
     {

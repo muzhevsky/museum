@@ -23,6 +23,16 @@ public class MyAnimation : MonoBehaviour
     {
         StartCoroutine(AnimateWin());
     }
+    public virtual void Lose(int answerNumber)
+    {
+        print(answerNumber);
+        StartCoroutine(AnimateLose());
+    }
+    public virtual void Win(int answerNumber)
+    {
+        print(answerNumber);
+        StartCoroutine(AnimateWin());
+    }
     public virtual IEnumerator AnimateLose()
     {
         animator.Play("lose");

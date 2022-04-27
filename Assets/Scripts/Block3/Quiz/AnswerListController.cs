@@ -8,7 +8,11 @@ public class AnswerListController : MonoBehaviour
     List<SingleAnswerController> answerList = new List<SingleAnswerController>();
     QuizController quizController;
     GameObject newItem;
-
+    int number;
+    private void Start()
+    {
+        number = 0;
+    }
     public void AddTextAnswer(string text, Answer answer)
     {
         newItem = Instantiate(textAnswer, transform);
@@ -17,6 +21,7 @@ public class AnswerListController : MonoBehaviour
         answerController.SetText(text);
         answerController.SetAnswer(answer);
         answerController.SetList(this);
+        answerController.SetNumber(number++);
     }
 
     internal void SetQuizController(QuizController quizController)
@@ -51,6 +56,12 @@ public class AnswerListController : MonoBehaviour
     {
         if (isRight) quizController.OnRightAnswer();
         else quizController.OnFalseAnswer();
+    }
+    public void OnAnswer(bool isRight, int answerNumber)
+    {
+        if (isRight) quizController.OnRightAnswer(answerNumber);
+        else quizController.OnFalseAnswer(answerNumber);
+        number = 0;
     }
     public bool CheckCorrectAnswers()
     {
