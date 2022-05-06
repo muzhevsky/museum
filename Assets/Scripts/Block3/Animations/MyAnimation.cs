@@ -15,14 +15,6 @@ public class MyAnimation : MonoBehaviour
         startPosition = ((RectTransform)transform).localPosition;
         startRotation = transform.rotation;
     }
-    public virtual void Lose()
-    {
-        StartCoroutine(AnimateLose());
-    }
-    public virtual void Win()
-    {
-        StartCoroutine(AnimateWin());
-    }
     public virtual void Lose(int answerNumber)
     {
         print(answerNumber);
@@ -31,6 +23,14 @@ public class MyAnimation : MonoBehaviour
     public virtual void Win(int answerNumber)
     {
         print(answerNumber);
+        StartCoroutine(AnimateWin());
+    }
+    public virtual void Lose()
+    {
+        StartCoroutine(AnimateLose());
+    }
+    public virtual void Win()
+    {
         StartCoroutine(AnimateWin());
     }
     public virtual IEnumerator AnimateLose()

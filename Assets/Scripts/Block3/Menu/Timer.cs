@@ -23,7 +23,7 @@ public class Timer : MonoBehaviour
             text.text = Math.Round(timeLeft, 1).ToString();
             if (timeLeft <= 0)
             {
-                block.OnFalseAnswer();
+                block.OnFalseAnswer(1);
                 timeLeft = 0;
                 text.text = timeLeft.ToString();
                 timerIsTicking = false;

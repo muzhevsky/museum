@@ -64,12 +64,12 @@ public class AnimationController : MonoBehaviour
     }
     public void OnLoseAnimationEnd()
     {
-        overlay.active = false;
+        overlay.SetActive(false);
         gameBlock.Lose();
     }
     public virtual void OnWinAnimationEnd()
     {
-        overlay.active = false;
+        overlay.SetActive(false);
         gameBlock.Win();
     }
 }

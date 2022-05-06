@@ -6,8 +6,8 @@ using UnityEngine.UI;
 
 public class DescriptionController : MonoBehaviour
 {
-    [SerializeField] Image image;
-    [SerializeField] TextMeshProUGUI text;
+    [SerializeField] protected Image image;
+    [SerializeField] protected TextMeshProUGUI text;
     public void SetContent(SwiperItemContent content, RectTransform caller)
     {
         image.sprite = content.GetColoredImage();

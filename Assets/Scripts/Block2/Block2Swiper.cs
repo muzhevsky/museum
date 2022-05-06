@@ -22,7 +22,7 @@ public class Block2Swiper : MonoBehaviour
             {
                 if (Content.offsetMin.x - startPositionX < -200)
                 {
-                    if (state < 2) MoveToState(++state);
+                    if (state < 1) MoveToState(++state);
                 }
                 else if (Content.offsetMin.x - startPositionX > 200)
                 {

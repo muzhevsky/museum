@@ -11,5 +11,4 @@ public class GlobalUIController : MonoBehaviour
         activeBlock.SetActive(false);
         activeBlock = block;
     }
-    
 }
