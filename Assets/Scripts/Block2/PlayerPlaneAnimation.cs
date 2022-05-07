@@ -50,8 +50,10 @@ public class PlayerPlaneAnimation : MyAnimation
         yield return new WaitForSeconds(length/3);
         generator.gameObject.SetActive(true);
         yield return new WaitForSeconds(length*2/3);
-        canvasGroup.DOFade(0, length / 3).OnComplete(() => generator.TurnOff());
-        animationController.OnLoseAnimationEnd();
+        canvasGroup.DOFade(0, length / 3).OnComplete(() => {
+            generator.TurnOff();
+            animationController.OnLoseAnimationEnd();
+        });
     }
     public override void Setup()
     {
