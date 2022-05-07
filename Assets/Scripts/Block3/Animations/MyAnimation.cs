@@ -17,12 +17,10 @@ public class MyAnimation : MonoBehaviour
     }
     public virtual void Lose(int answerNumber)
     {
-        print(answerNumber);
         StartCoroutine(AnimateLose());
     }
     public virtual void Win(int answerNumber)
     {
-        print(answerNumber);
         StartCoroutine(AnimateWin());
     }
     public virtual void Lose()
@@ -36,7 +34,7 @@ public class MyAnimation : MonoBehaviour
     public virtual IEnumerator AnimateLose()
     {
         animator.Play("lose");
-        float length = animator.runtimeAnimatorController.animationClips[2].length;
+        float length = animator.runtimeAnimatorController.animationClips[1].length;
         yield return new WaitForSeconds(length);
         animationController.OnLoseAnimationEnd();
     }

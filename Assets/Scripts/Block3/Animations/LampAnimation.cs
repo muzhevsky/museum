@@ -19,20 +19,19 @@ public class LampAnimation : MyAnimation
         red.gameObject.SetActive(true);
         red.FadeIn();
     }
+    public override void Lose(int answerNumber)
+    {
+        Lose();
+    }
+    public override void Win(int answerNumber)
+    {
+        Win();
+    }
     public void FadeIn()
     {
         GetComponent<Image>().DOFade(1, 0.5f).OnComplete(()=> GetComponent<Image>().DOFade(0, 0.5f).OnComplete(() => GetComponent<Image>().DOFade(1, 0.5f).OnComplete(() => GetComponent<Image>().DOFade(0, 0.5f).OnComplete(()=>gameObject.SetActive(false)))));
     }
     public override void Setup()
     {
-        
-    }
-    public override void Pause()
-    {
-
-    }
-    public override void Unpause()
-    {
-
     }
 }

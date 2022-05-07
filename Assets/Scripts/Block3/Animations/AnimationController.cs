@@ -17,6 +17,7 @@ public class AnimationController : MonoBehaviour
     }
     public virtual void OnDefeat()
     {
+        print("1");
         overlay.active = true;
         foreach (MyAnimation anim in animators)
         {
@@ -33,6 +34,7 @@ public class AnimationController : MonoBehaviour
     }
     public virtual void OnDefeat(int answerNumber)
     {
+        print("2");
         overlay.active = true;
         foreach (MyAnimation anim in animators)
         {

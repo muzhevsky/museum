@@ -17,6 +17,14 @@ public class CometAnimation : MyAnimation
     {
         StartCoroutine(AnimateWin());
     }
+    public virtual void Lose(int answerNumber)
+    {
+        Lose();
+    }
+    public virtual void Win(int answerNumber)
+    {
+        Win();
+    }
     public override IEnumerator AnimateWin()
     {
         animator.speed = timer.timeLeft / length;

@@ -5,12 +5,13 @@ using UnityEngine;
 public class RuleAnimation : MyAnimation
 {
     float questionNumber;
-    public override void Lose()
+    public override void Lose(int answerNumber)
     {
 
     }
-    public override void Win()
+    public override void Win(int answerNumber)
     {
+        print(questionNumber);
         if (questionNumber % 2 == 0) animator.Play("leftTurn");
         else animator.Play("rightTurn");
     }
