@@ -40,6 +40,7 @@ public class AnswerListController : MonoBehaviour
     }
     void ClearAnswersList()
     {
+        number = 0;
         if (answerList.Count > 0)
         {
             foreach (SingleAnswerController answer in answerList)

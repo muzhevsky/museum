@@ -58,7 +58,9 @@ public class PlayerPlaneAnimation : MyAnimation
     public override void Setup()
     {
         canvasGroup.alpha = 1;
-        base.Setup();
+        ((RectTransform)transform).localPosition = startPosition;
+        transform.rotation = startRotation;
+        animator.Play("idle",-1,0f);
         generator.TurnOff();
     }
 }
