@@ -8,7 +8,7 @@ public class HomeButton : MenuButtonController
 
     public override void OnClick()
     {
-        block.StopGame();
+        block?.StopGame();
         uiController.LoadBlock(nextBlock);
     }
 }

@@ -9,7 +9,7 @@ public class HoseAnimation : MyAnimation
     public override void Lose()
     {
         animator.SetBool("lose", true);
-        animator.SetBool("win", true);
+        animator.SetBool("win", false);
     }
     public override void Setup()
     {
