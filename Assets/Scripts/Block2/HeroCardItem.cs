@@ -8,6 +8,10 @@ public class HeroCardItem : Button
     [SerializeField] HeroDescriptionController descriptionController;
     public override void OnClick()
     {
+        SetContent();
+    }
+    public void SetContent()
+    {
         descriptionController.SetContent(content, (RectTransform)transform);
     }
 }

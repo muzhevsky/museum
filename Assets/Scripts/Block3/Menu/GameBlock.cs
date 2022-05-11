@@ -17,6 +17,7 @@ public class GameBlock : Block
     [SerializeField] QuizController quizController;
     [SerializeField] Block nextBlock;
     [SerializeField] AnimationController animationController;
+    [SerializeField] float waitTime;
     public void OnRightAnswer()
     {
         animationController.OnVictory();
@@ -48,9 +49,7 @@ public class GameBlock : Block
 
         if (!quizController.QuizIsOver())
         {
-            quizController.gameObject.SetActive(true);
-            quizController.StartQuiz();
-            animationController.OnSetup(quizController.GetQuestionNumber());
+            StartGame();
         }
         else
         {
@@ -74,14 +73,6 @@ public class GameBlock : Block
     }
     public void RestartGame()
     {
-        //activeScreen.SetActive(false);
-        //quizContainer.SetActive(false);
-        //quizController.gameObject.SetActive(false);
-        //activeScreen = StartScreen;
-        //activeScreen.SetActive(true);
-        //onScreenTimer.ResetTimer();
-        //quizController.RestartQuiz();
-        //animationController.OnSetup(quizController.GetNumber());
         onScreenTimer.ResetTimer();
         quizController.RestartQuiz();
         StartGame();
@@ -91,9 +82,15 @@ public class GameBlock : Block
         onScreenTimer.StartTimer();
         activeScreen.SetActive(false);
         quizContainer.SetActive(true);
+        StartCoroutine(DelayBeforeStart());
+        animationController.OnSetup(quizController.GetQuestionNumber());
+    }
+    IEnumerator DelayBeforeStart()
+    {
+        yield return new WaitForSeconds(waitTime);
         quizController.gameObject.SetActive(true);
         quizController.StartQuiz();
-        animationController.OnSetup(quizController.GetQuestionNumber());
+
     }
     public void PauseGame()
     {
@@ -120,9 +117,5 @@ public class GameBlock : Block
         quizController.gameObject.SetActive(false);
         quizController.OnWin();
         animationController.OnSetup(quizController.GetQuestionNumber());
-    }
-    void EndGame()
-    {
-
     }
 }

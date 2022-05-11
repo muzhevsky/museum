@@ -8,7 +8,6 @@ public class PlayerPlaneAnimation : MyAnimation
     [SerializeField] CanvasGroup canvasGroup;
     public override void Win(int answerNumber)
     {
-        print(answerNumber);
         switch (answerNumber)
         {
             case 0:
@@ -25,7 +24,6 @@ public class PlayerPlaneAnimation : MyAnimation
     }
     public override void Lose(int answerNumber)
     {
-        print(answerNumber);
         switch (answerNumber)
         {
             case 0:
@@ -47,9 +45,10 @@ public class PlayerPlaneAnimation : MyAnimation
     }
     IEnumerator WaitForLose()
     {
-        yield return new WaitForSeconds(length/3);
+        float time = length / 3;
+        yield return new WaitForSeconds(time);
         generator.gameObject.SetActive(true);
-        yield return new WaitForSeconds(length*2/3);
+        yield return new WaitForSeconds(time*2);
         canvasGroup.DOFade(0, length / 3).OnComplete(() => {
             generator.TurnOff();
             animationController.OnLoseAnimationEnd();

@@ -16,7 +16,7 @@ public class HeroDescriptionController : DescriptionController
         activeCard.SetActive(true);
         activeCard = caller.gameObject;
         activeCard.SetActive(false);
-        scrollBarDescription.value = 1;
+        scrollBarDescription.value = 0;
         contentDescription.offsetMax = new Vector2(330, 0);
         nameText.text = content.GetName();
         descriptionText.text = content.GetDescription();
