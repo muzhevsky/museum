@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HeroDescriptionController : DescriptionController
+public sealed class HeroDescriptionController : DescriptionController
 {
     [SerializeField] Text nameText;
     [SerializeField] Text descriptionText;
@@ -12,7 +12,6 @@ public class HeroDescriptionController : DescriptionController
     [SerializeField] RectTransform contentDescription;
     public void SetContent(HeroItemContent content, RectTransform caller)
     {
-        print("aaa");
         activeCard.SetActive(true);
         activeCard = caller.gameObject;
         activeCard.SetActive(false);

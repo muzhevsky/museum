@@ -11,7 +11,6 @@ public class RuleAnimation : MyAnimation
     }
     public override void Win(int answerNumber)
     {
-        print(questionNumber);
         if (questionNumber % 2 == 0) animator.Play("leftTurn");
         else animator.Play("rightTurn");
     }

@@ -13,7 +13,6 @@ public class ExplosionEffectGenerator : MonoBehaviour
     private void Start()
     {
         explosions = new List<GameObject>();
-        print("aaa");
         if(gameObject.activeInHierarchy) StartCoroutine(SpawnExplosion());
     }
     private void OnEnable()

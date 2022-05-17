@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class Block2Swiper : MonoBehaviour
+public sealed class Block2Swiper : MonoBehaviour
 {
     [SerializeField] RectTransform Content;
     float startPositionX;
@@ -22,11 +22,11 @@ public class Block2Swiper : MonoBehaviour
             {
                 if (Content.offsetMin.x - startPositionX < -200)
                 {
-                    if (state < 1) MoveToState(++state);
+                    if (state == 0) MoveToState(1);
                 }
                 else if (Content.offsetMin.x - startPositionX > 200)
                 {
-                    if (state > 0) MoveToState(--state);
+                    if (state == 1) MoveToState(0);
                 }
                 else
                 {
@@ -34,27 +34,11 @@ public class Block2Swiper : MonoBehaviour
                     Content.DOLocalMoveX(startPositionX, 0.3f).OnComplete(() => { interactable = true; });
                 }
             }
-            //if (Input.GetTouch(0).phase == TouchPhase.Began) startPositionX = Content.offsetMin.x;
-            //if(Input.GetTouch(0).phase == TouchPhase.Ended)
-            //{
-            //    if (Content.offsetMin.x - startPositionX < -200)
-            //    {
-            //        if (state < 2) MoveToState(++state);
-            //    }
-            //    else if (Content.offsetMin.x - startPositionX > 200)
-            //    {
-            //        if (state > 0) MoveToState(--state);
-            //    }
-            //    else
-            //    {
-            //        interactable = false;
-            //        Content.DOLocalMoveX(startPositionX, 0.3f).OnComplete(() => { interactable = true; });
-            //    }
-            //}
         }
     }
-    private void MoveToState(int state)
+    public void MoveToState(int state)
     {
+        this.state = state;
         interactable = false;
         Content.DOLocalMoveX(-state * 1920, 0.3f).OnComplete(() => { interactable = true; });
     }

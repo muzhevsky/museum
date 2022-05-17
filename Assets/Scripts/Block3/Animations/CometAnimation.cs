@@ -50,7 +50,6 @@ public class CometAnimation : MyAnimation
         animator.SetBool("WinRight",false);
         animator.SetBool("WinLeft", false);
         this.questionNumber = questionNumber;
-        print(questionNumber);
         if (questionNumber%2==1) {
             transform.position = rightPoint.position;
             animator.Play("idleRight",-1,0);

@@ -2,18 +2,16 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorAnimation : MyAnimation
+public sealed class DoorAnimation : MyAnimation
 {
     [SerializeField] Animator loseBg;
     public override void Lose()
     {
-        print("aaa");
         loseBg.Play("lose");
         StartCoroutine(AnimateLose());
     }
     public override void Lose(int answerNumber)
     {
-        print("aaa");
         loseBg.Play("lose");
         StartCoroutine(AnimateLose());
     }
