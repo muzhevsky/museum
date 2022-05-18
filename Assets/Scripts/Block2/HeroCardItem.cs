@@ -6,9 +6,12 @@ public class HeroCardItem : Button
 {
     [SerializeField] HeroItemContent content;
     [SerializeField] HeroDescriptionController descriptionController;
+    [SerializeField] NextHeroButton button;
+    [SerializeField] int index;
     public override void OnClick()
     {
         SetContent();
+        button.SetActiveCard(this, index);
     }
     public void SetContent()
     {

@@ -21,4 +21,9 @@ public class NextHeroButton : Button
         else current = cardList[++index];
         current.SetContent();
     }
+    public void SetActiveCard(HeroCardItem item, int index)
+    {
+        current = item;
+        this.index = index;
+    }
 }

@@ -24,7 +24,7 @@ public sealed class Block2Swiper : MonoBehaviour
                 {
                     if (state == 0) MoveToState(1);
                 }
-                else if (Content.offsetMin.x - startPositionX > 200)
+                else if (Content.offsetMin.x - startPositionX >= 200)
                 {
                     if (state == 1) MoveToState(0);
                 }
