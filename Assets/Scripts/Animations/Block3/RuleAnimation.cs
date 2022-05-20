@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RuleAnimation : MyAnimation
+public sealed class RuleAnimation : MyAnimation
 {
     float questionNumber;
     public override void Setup(int questionNumber)

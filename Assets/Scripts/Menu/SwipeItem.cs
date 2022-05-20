@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.EventSystems;
 
-public class SwipeItem : Button
+public sealed class SwipeItem : Button
 {
     [SerializeField] SwiperItemContent content;
     [SerializeField] Image image;

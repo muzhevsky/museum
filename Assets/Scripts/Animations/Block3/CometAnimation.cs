@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class CometAnimation : MyAnimation
+public sealed class CometAnimation : MyAnimation
 {
     [SerializeField] RectTransform rightPoint;
     [SerializeField] RectTransform leftPoint;

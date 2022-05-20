@@ -17,6 +17,10 @@ public class QuizController : MonoBehaviour
         if (number < quizItems.Count) return false;
         return true;
     }
+    public bool IsLastQuestion()
+    {
+        return number==quizItems.Count-1;
+    }
     public void StartQuiz()
     {
         if (number<quizItems.Count)

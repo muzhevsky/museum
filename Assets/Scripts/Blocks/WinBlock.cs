@@ -4,7 +4,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class WinBlock : Block
+public sealed class WinBlock : Block
 {
     [SerializeField] List<Timer> timers;
     [SerializeField] WinAnimationController animController;

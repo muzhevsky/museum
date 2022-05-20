@@ -6,7 +6,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using TMPro;
 
-public class CommonAnswerController : TextAnswerController
+public sealed class CommonAnswerController : TextAnswerController
 {
     public override void OnClick()
     {

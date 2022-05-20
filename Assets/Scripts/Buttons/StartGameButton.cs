@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class StartGameButton : Button
+public sealed class StartGameButton : Button
 {
     [SerializeField] GameBlock gameBlock;
     [SerializeField] GlobalUIController controller;
@@ -10,7 +10,7 @@ public class StartGameButton : Button
     [SerializeField] Block beforeGameStartsBlock;
     public override void OnClick()
     {
-        controller.LoadGameBlock(gameBlock);
+        controller.LoadGameBlock(gameBlock,true);
         endGameBlock.Setup(gameBlock);
     }
 }

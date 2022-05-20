@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class EarthAnimation : MyAnimation
+public sealed class EarthAnimation : MyAnimation
 {
     [SerializeField] WinAnimationController controller;
     public override void Setup()

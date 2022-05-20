@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using UnityEngine;
-public class AnswerListController : MonoBehaviour
+public sealed class AnswerListController : MonoBehaviour
 {
     public GameObject textAnswer;
     List<TextAnswerController> answerList = new List<TextAnswerController>();

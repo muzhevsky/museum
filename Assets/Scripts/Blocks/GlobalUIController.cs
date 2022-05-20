@@ -11,13 +11,18 @@ public class GlobalUIController : MonoBehaviour
     [SerializeField] Window loseWindow;
     [SerializeField] Window startWindow;
     [SerializeField] Window endGameWindow;
+
+    private void Start()
+    {
+        Application.targetFrameRate = 60;
+    }
     public void LoadBlock(Block block)
     {
         block.SetActive(true);
         activeBlock.SetActive(false);
         activeBlock = block;
     }
-    public void LoadGameBlock(GameBlock block)
+    public void LoadGameBlock(GameBlock block, bool sWindowFlag)
     {
         LoadBlock(block);
         startWindow.Setup(block);
@@ -25,7 +30,8 @@ public class GlobalUIController : MonoBehaviour
         loseWindow.Setup(block);
         pauseWindow.Setup(block);
         activeBlock = block;
-        OpenWindow(Windows.startWindow);
+        if (sWindowFlag) OpenWindow(Windows.startWindow);
+        else block.StartGame();
     }
     public void HideActiveWindow()
     {

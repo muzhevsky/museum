@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [CreateAssetMenu(menuName = "ScriptableObject/SwiperItemContent")]
-public class SwiperItemContent : ScriptableObject
+public sealed class SwiperItemContent : ScriptableObject
 {
     [SerializeField] string description;
     [SerializeField] Sprite image;

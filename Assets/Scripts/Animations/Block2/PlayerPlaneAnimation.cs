@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
-public class PlayerPlaneAnimation : MyAnimation
+public sealed class PlayerPlaneAnimation : MyAnimation
 {
     [SerializeField] ExplosionEffectGenerator generator;
     [SerializeField] CanvasGroup canvasGroup;

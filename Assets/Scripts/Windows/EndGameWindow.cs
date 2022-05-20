@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class EndGameWindow : Window
+public sealed class EndGameWindow : Window
 {
     [SerializeField] RestartEntireGameButton restartGameButton;
     [SerializeField] LoadBlockButton homeButton;

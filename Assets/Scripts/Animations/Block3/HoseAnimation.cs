@@ -4,7 +4,7 @@ using UnityEngine;
 using DG.Tweening;
 using UnityEngine.UI;
 
-public class HoseAnimation : MyAnimation
+public sealed class HoseAnimation : MyAnimation
 {
     public override void Lose()
     {

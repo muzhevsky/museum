@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-public class NumberDependentAnswer : TextAnswerController
+public sealed class NumberDependentAnswer : TextAnswerController
 {
     public override void OnClick()
     {

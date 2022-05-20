@@ -3,7 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class Timer : MonoBehaviour
+public sealed class Timer : MonoBehaviour
 {
     [SerializeField] float timeLimit = 20;
     [SerializeField] public float timeLeft = 20;

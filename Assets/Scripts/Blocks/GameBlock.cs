@@ -7,21 +7,22 @@ using UnityEngine.UI;
 public class GameBlock : Block
 {
 
-    [SerializeField] GameBlock nextGameBlock;
-    [SerializeField] Block winBlock;
+    [SerializeField] protected GameBlock nextGameBlock;
+    [SerializeField] protected Block winBlock;
 
-    [SerializeField] GlobalUIController controller;
-    [SerializeField] AnimationController animationController;
-    [SerializeField] QuizController quizController;
+    [SerializeField] protected GlobalUIController controller;
+    [SerializeField] protected AnimationController animationController;
+    [SerializeField] protected QuizController quizController;
 
-    [SerializeField] WindowInfo windowInfo;
-    [SerializeField] GameObject overlay;
-    [SerializeField] GameObject quizContainer;
-    [SerializeField] Timer onScreenTimer;
+    [SerializeField] protected WindowInfo windowInfo;
+    [SerializeField] protected GameObject overlay;
+    [SerializeField] protected GameObject quizContainer;
+    [SerializeField] protected Timer onScreenTimer;
 
-    [SerializeField] float waitTime;
-    [SerializeField] Block beforeGameStartsBlock;
+    [SerializeField] protected float waitTime;
+    [SerializeField] protected Block beforeGameStartsBlock;
 
+    [SerializeField] bool startWindowFlag = false;
     public Block GetBeforeGameStartsBlock()
     {
         return beforeGameStartsBlock;
@@ -30,14 +31,14 @@ public class GameBlock : Block
     {
         return windowInfo;
     }
-    public void OnRightAnswer()
+    public virtual void OnRightAnswer()
     {
         overlay.SetActive(true);
         animationController.OnVictory();
         quizController.gameObject.SetActive(false);
         onScreenTimer.CountTime();
     }
-    public void OnFalseAnswer()
+    public virtual void OnFalseAnswer()
     {
         overlay.SetActive(true);
         animationController.OnDefeat();
@@ -51,14 +52,14 @@ public class GameBlock : Block
         quizController.gameObject.SetActive(false);
         onScreenTimer.CountTime();
     }
-    public void OnRightAnswer(int answerNumber)
+    public virtual void OnRightAnswer(int answerNumber)
     {
         overlay.SetActive(true);
         animationController.OnVictory(answerNumber);
         quizController.gameObject.SetActive(false);
         onScreenTimer.CountTime();
     }
-    public void OnNextQuestion()
+    public virtual void OnNextQuestion()
     {
         controller.HideActiveWindow();
         onScreenTimer.StartTimer();
@@ -74,7 +75,12 @@ public class GameBlock : Block
     }
     public void Win()
     {
-        controller.OpenWindow(Windows.winWindow);
+        if (quizController.QuizIsOver() && nextGameBlock == null)
+        {
+            StopGame();
+            controller.LoadBlock(winBlock);
+        }
+        else controller.OpenWindow(Windows.winWindow);
     }
     public void Lose()
     {
@@ -84,7 +90,7 @@ public class GameBlock : Block
     {
         controller.HideActiveWindow();
         StopGame();
-        if (nextGameBlock != null) controller.LoadGameBlock(nextGameBlock);
+        if (nextGameBlock != null) controller.LoadGameBlock(nextGameBlock, startWindowFlag);
         else controller.LoadBlock(winBlock);
     }
     public void RestartLevel()

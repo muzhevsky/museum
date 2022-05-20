@@ -8,8 +8,6 @@ public sealed class HeroDescriptionController : DescriptionController
     [SerializeField] Text nameText;
     [SerializeField] Text descriptionText;
     [SerializeField] GameObject activeCard;
-    [SerializeField] Scrollbar scrollBarDescription;
-    [SerializeField] RectTransform contentDescription;
     public void SetContent(HeroItemContent content, RectTransform caller)
     {
         activeCard.SetActive(true);

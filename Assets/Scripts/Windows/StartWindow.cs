@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class StartWindow : Window
+public sealed class StartWindow : Window
 {
     [SerializeField] StartLevelButton startGameButton;
     [SerializeField] Text targetText;
