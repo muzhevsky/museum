@@ -12,11 +12,24 @@ public sealed class SwipeItem : Button
     [SerializeField] DescriptionController descriptionController;
     private void Start()
     {
-        image.sprite = content.GetImage();
+        SetImage();
     }
     public override void OnClick()
     {
         descriptionController.gameObject.SetActive(true);
         descriptionController.SetContent(content,(RectTransform)transform);
+    }
+    public void SetImage()
+    {
+        image.sprite = content?.GetImage();
+    }
+    public void SetContent(SwiperItemContent content)
+    {
+        this.content = content;
+        SetImage();
+    }
+    public void SetDescriptionController(DescriptionController controller)
+    {
+        descriptionController = controller;
     }
 }
