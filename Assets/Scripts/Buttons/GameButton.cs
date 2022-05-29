@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameButton : Button
+public class GameButton : MyButton
 {
     [SerializeField] protected GameBlock gameBlock;
 

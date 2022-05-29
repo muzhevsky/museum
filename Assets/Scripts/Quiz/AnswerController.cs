@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class AnswerController : Button
+public class AnswerController : MyButton
 {
 
     protected Answer answer;

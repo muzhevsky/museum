@@ -7,15 +7,19 @@ using UnityEngine.UI;
 public sealed class SwiperItemContent : ScriptableObject
 {
     [SerializeField] string description;
-    [SerializeField] Sprite image;
-    [SerializeField] Sprite coloredImage;
-    public Sprite GetColoredImage()
+    public Sprite[] images;
+    public Sprite[] coloredImages;
+
+    public Sprite GetColoredImage(int pos)
     {
-        return coloredImage;
+        if (coloredImages != null)
+            if(coloredImages.Length > pos) 
+                return coloredImages[pos];
+        return images[pos];
     }
-    public Sprite GetImage()
+    public Sprite GetImage(int pos)
     {
-        return image;
+        return images[pos];
     }
     public string GetDescription()
     {

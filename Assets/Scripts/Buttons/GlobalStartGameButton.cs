@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GlobalStartGameButton : Button
+public class GlobalStartGameButton : MyButton
 {
     [SerializeField] GameObject realStartScreen;
     public override void OnClick()

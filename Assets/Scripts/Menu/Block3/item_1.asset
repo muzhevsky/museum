@@ -45,5 +45,6 @@ MonoBehaviour:
     \u043F\u0440\u043E\u0440\u0430\u0431\u043E\u0442\u0430\u0432\u0448\u0438\u0439
     \u0432 \u044D\u0442\u043E\u0439 \u0434\u043E\u043B\u0436\u043D\u043E\u0441\u0442\u0438
     \u0434\u043E 1962 \u0433.  "
-  image: {fileID: 21300000, guid: 480d744df6d546f478350cecc311c7b7, type: 3}
-  coloredImage: {fileID: 21300000, guid: 480d744df6d546f478350cecc311c7b7, type: 3}
+  images:
+  - {fileID: 21300000, guid: 480d744df6d546f478350cecc311c7b7, type: 3}
+  coloredImages: []

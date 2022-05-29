@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HeroCardItem : Button
+public class HeroCardItem : MyButton
 {
     [SerializeField] HeroItemContent content;
     [SerializeField] HeroDescriptionController descriptionController;
@@ -11,7 +11,7 @@ public class HeroCardItem : Button
     public override void OnClick()
     {
         SetContent();
-        button.SetActiveCard(this, index);
+        button?.SetActiveCard(this, index);
     }
     public void SetContent()
     {

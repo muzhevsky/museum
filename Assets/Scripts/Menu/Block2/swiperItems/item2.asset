@@ -83,5 +83,7 @@ MonoBehaviour:
     \u041A\u0440\u0430\u0441\u043D\u043E\u0439 \u0417\u0432\u0435\u0437\u0434\u044B,
     \u043E\u0440\u0434\u0435\u043D\u0430 \u041E\u0442\u0435\u0447\u0435\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0439
     \u0432\u043E\u0439\u043D\u044B II \u0441\u0442\u0435\u043F\u0435\u043D\u0438. "
-  image: {fileID: 21300000, guid: 473d77ed548c8654c979491daf43f45f, type: 3}
-  coloredImage: {fileID: 21300000, guid: 1d88ec1b518d23a4f9bff931b380c800, type: 3}
+  images:
+  - {fileID: 21300000, guid: 473d77ed548c8654c979491daf43f45f, type: 3}
+  coloredImages:
+  - {fileID: 21300000, guid: 1d88ec1b518d23a4f9bff931b380c800, type: 3}

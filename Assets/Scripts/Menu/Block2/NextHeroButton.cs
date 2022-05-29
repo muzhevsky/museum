@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class NextHeroButton : Button
+public class NextHeroButton : MyButton
 {
     [SerializeField] List<HeroCardItem> cardList;
     [SerializeField] HeroCardItem current;

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca5568d6494f604e909bcd971cccbe5, type: 3}
   m_Name: ta1
   m_EditorClassIdentifier: 
-  IsRight: 0
-  text: 
+  IsRight: 1
+  text: " \u0415.\u041C. \u0426\u0430\u043B\u0438\u0445\u0438\u043D "

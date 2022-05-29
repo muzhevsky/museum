@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3ca5568d6494f604e909bcd971cccbe5, type: 3}
   m_Name: t2
   m_EditorClassIdentifier: 
-  IsRight: 1
+  IsRight: 0
   text: "\u041B\u0438\u0434\u0438\u044F \u0426\u0435\u043B\u043E\u0432\u0430\u043B\u044C\u043D\u0438\u043A\u043E\u0432\u0430"

@@ -45,5 +45,7 @@ MonoBehaviour:
     \u0434\u043E\u0446\u0435\u043D\u0442\u0430 \u043A\u0430\u0444\u0435\u0434\u0440\u044B
     \xAB\u041F\u0440\u043E\u0438\u0437\u0432\u043E\u0434\u0441\u0442\u0432\u043E
     \u0438 \u0440\u0435\u043C\u043E\u043D\u0442 \u043C\u0430\u0448\u0438\u043D\xBB. "
-  image: {fileID: 21300000, guid: ce35e59f77c7dc846bec4f2b7421d33e, type: 3}
-  coloredImage: {fileID: 21300000, guid: 6577010a90fede74b9a2aeb48328f65f, type: 3}
+  images:
+  - {fileID: 21300000, guid: ce35e59f77c7dc846bec4f2b7421d33e, type: 3}
+  coloredImages:
+  - {fileID: 21300000, guid: 6577010a90fede74b9a2aeb48328f65f, type: 3}

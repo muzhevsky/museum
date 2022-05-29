@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public sealed class PauseButton : Button   
+public sealed class PauseButton : MyButton   
 {
     [SerializeField] GameBlock block;
 

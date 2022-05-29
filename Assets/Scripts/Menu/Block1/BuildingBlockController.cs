@@ -9,6 +9,8 @@ public class BuildingBlockController : MonoBehaviour
     [SerializeField] int buildingNumber = 0;
     [SerializeField] float timeCounter = 0f;
     [SerializeField] float idleTime = 0f;
+    [SerializeField] float maxIdleTime = 60f;
+
 
     [SerializeField] List<BuildingTextSO> buildingTextSOs;
     [SerializeField] BuildingTextSO globalText;
@@ -38,7 +40,7 @@ public class BuildingBlockController : MonoBehaviour
         else
         {
             idleTime += Time.deltaTime;
-            if(idleTime > 10)
+            if(idleTime > maxIdleTime)
             {
                 SetAutoSwitching();
             }

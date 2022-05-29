@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class LoadBlockButton : Button
+public class LoadBlockButton : MyButton
 {
     [SerializeField] protected Block nextBlock;
     [SerializeField] protected GlobalUIController uiController;

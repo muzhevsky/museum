@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class RestartEntireGameButton : Button
+public class RestartEntireGameButton : MyButton
 {
     [SerializeField] Block block;
     [SerializeField] GlobalUIController controller;

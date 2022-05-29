@@ -28,14 +28,12 @@ public class MyAnimation : MonoBehaviour
     public virtual IEnumerator AnimateLose()
     {
         animator.Play("lose");
-        float length = animator.runtimeAnimatorController.animationClips[1].length;
         yield return new WaitForSeconds(length);
         animationController.OnLoseAnimationEnd();
     }
     public virtual IEnumerator AnimateWin()
     {
         animator.Play("win");
-        float length = animator.runtimeAnimatorController.animationClips[1].length;
         yield return new WaitForSeconds(length);
         animationController.OnWinAnimationEnd();
     }

@@ -25,7 +25,7 @@ public class QuizController : MonoBehaviour
     {
         if (number<quizItems.Count)
         {
-            questionNumberText.text = "[Вопрос "+quizItems[number].GetNumber()+"]";
+            questionNumberText.text = "Вопрос "+quizItems[number].GetNumber();
             questionController.SetQuestionUI(quizItems[number].GetQuestion());
             answerListController.SetAnswerUI(quizItems[number++].GetAnswerList());
             answerListController.SetQuizController(this);

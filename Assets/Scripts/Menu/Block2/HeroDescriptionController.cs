@@ -10,9 +10,9 @@ public sealed class HeroDescriptionController : DescriptionController
     [SerializeField] GameObject activeCard;
     public void SetContent(HeroItemContent content, RectTransform caller)
     {
-        activeCard.SetActive(true);
+        activeCard?.SetActive(true);
         activeCard = caller.gameObject;
-        activeCard.SetActive(false);
+        activeCard?.SetActive(false);
         scrollBarDescription.value = 0;
         contentDescription.offsetMax = new Vector2(330, 0);
         nameText.text = content.GetName();

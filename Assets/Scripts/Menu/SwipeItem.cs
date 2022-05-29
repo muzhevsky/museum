@@ -5,7 +5,7 @@ using UnityEngine.UI;
 using DG.Tweening;
 using UnityEngine.EventSystems;
 
-public sealed class SwipeItem : Button
+public sealed class SwipeItem : MyButton
 {
     [SerializeField] SwiperItemContent content;
     [SerializeField] Image image;
@@ -17,11 +17,12 @@ public sealed class SwipeItem : Button
     public override void OnClick()
     {
         descriptionController.gameObject.SetActive(true);
-        descriptionController.SetContent(content,(RectTransform)transform);
+        descriptionController.SetContent(content);
+        descriptionController.LoadContent((RectTransform)transform);
     }
     public void SetImage()
     {
-        image.sprite = content?.GetImage();
+        image.sprite = content?.GetImage(0);
     }
     public void SetContent(SwiperItemContent content)
     {
