@@ -15,7 +15,6 @@ public class SwiperGenerator : MonoBehaviour
     [SerializeField] float Height;
     public void Start()
     {
-        print("asd");
         LoadContent();
     }
     public void LoadContent()

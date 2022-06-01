@@ -8,7 +8,9 @@ public class DescriptionControllerBlock1 : DescriptionController
     [SerializeField] GameObject rightArrow;
     public override void LoadContent(RectTransform rectTransform)
     {
-        image.sprite = content.GetColoredImage(pos);
+        if(pos < content.images.Length) image.sprite = content.GetColoredImage(pos);
+        else image.sprite = content.GetColoredImage(0);
+        image.transform.localScale = new Vector2(scale, scale);
         text.text = content.GetDescription();
         if (content.images.Length > 1)
         {
@@ -23,14 +25,12 @@ public class DescriptionControllerBlock1 : DescriptionController
     }
     public void SetNextImage()
     {
-        print("next");
         if (pos < content.images.Length - 1) pos++;
         else pos = 0;
         LoadContent(null);
     }
     public void SetPrevImage()
     {
-        print("prev");
         if (pos > 0) pos--;
         else pos = content.images.Length - 1;
         LoadContent(null);

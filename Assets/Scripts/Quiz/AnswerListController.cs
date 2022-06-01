@@ -57,7 +57,6 @@ public sealed class AnswerListController : MonoBehaviour
     {
         bool res = true;
         foreach (CommonAnswerController item in answerList) { 
-            print(item.IsRight());
             if (!item.IsRight()) res = false;
         } 
         return res;

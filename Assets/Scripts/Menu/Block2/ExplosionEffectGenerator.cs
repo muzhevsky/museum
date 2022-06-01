@@ -26,6 +26,7 @@ public class ExplosionEffectGenerator : MonoBehaviour
         inst.transform.localPosition = new Vector3(Random.Range(-xOffset, xOffset), Random.Range(-yOffset, yOffset), 0);
         inst.transform.rotation = Quaternion.Euler(0,0,Random.Range(0,180));
         inst.transform.localScale = new Vector3(1, 1, 1);
+
         bool flag = true;
         for(int i = 0; i < explosions.Count; i++)
         {
@@ -36,8 +37,10 @@ public class ExplosionEffectGenerator : MonoBehaviour
                 break;
             }
         }
+
         if (flag) explosions.Add(inst);
         yield return new WaitForSeconds(Random.Range(0.4f, 1f)/frequencyModifier);
+
         if (gameObject.activeInHierarchy) StartCoroutine(SpawnExplosion());
     }
     public void TurnOff()

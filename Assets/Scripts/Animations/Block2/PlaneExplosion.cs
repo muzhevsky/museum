@@ -10,7 +10,7 @@ public class PlaneExplosion : MonoBehaviour
     [SerializeField] Image image;
     private void OnEnable()
     {
-        animator.speed = Random.Range(0.8f, 1.5f);
+        animator.speed = Random.Range(1f, 1.6f);
         transform.DOScale(Random.Range(1.5f, 2.7f), 1.5f);
         animator.Play("idle");
         StartCoroutine(DestroyCoroutine());

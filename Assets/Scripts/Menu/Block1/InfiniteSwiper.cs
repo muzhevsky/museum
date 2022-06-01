@@ -32,7 +32,6 @@ public class InfiniteSwiper : MonoBehaviour
         }
         if (Input.GetMouseButtonUp(0))
         {
-            print(((RectTransform)transform).position + " " + ((RectTransform)transform).localPosition) ;
             Transform first = transform.GetChild(0);
             Transform last = transform.GetChild(transform.childCount - 1);
             if (value < moveValue && value >= moveValue/2)

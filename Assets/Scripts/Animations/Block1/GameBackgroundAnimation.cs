@@ -8,6 +8,10 @@ public class GameBackgroundAnimation : MyAnimation
     {
         StartCoroutine(AnimateLose());
     }
+    public override void Lose(int answerNumber)
+    {
+        StartCoroutine(AnimateLose());
+    }
     public virtual IEnumerator AnimateLose()
     {
         animator.Play("lose");
