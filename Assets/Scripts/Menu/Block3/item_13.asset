@@ -49,6 +49,6 @@ MonoBehaviour:
     \u043F\u0440\u0438\u0431\u043E\u0440\u043E\u0441\u0442\u0440\u043E\u0435\u043D\u0438\u044F
     \u043D\u0430 \u041F\u041E \xAB\u041A\u043E\u0440\u043F\u0443\u0441\xBB."
   images:
-  - {fileID: 21300000, guid: bef44bb531a48814987252cf28a05809, type: 3}
+  - {fileID: 21300000, guid: bb8b2992d53ade6498288c9c9c8492c3, type: 3}
   coloredImages:
-  - {fileID: 21300000, guid: 23c16883860212b40aadd3618d4f01a8, type: 3}
+  - {fileID: 21300000, guid: 59208449eb878614ea384b94faf8c003, type: 3}

@@ -81,7 +81,7 @@ public class BuildingBlockController : MonoBehaviour
     {
         autoSwitching = true;
         LoadNextInfoBlock(false);
-        buildingText.text = globalText.text;
+        buildingText.text = globalText.text+"a\naa";
         timeCounter = buildingNumber * 5;
     }
 }
